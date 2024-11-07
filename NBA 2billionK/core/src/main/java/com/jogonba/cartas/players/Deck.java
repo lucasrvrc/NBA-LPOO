@@ -17,4 +17,7 @@ public class Deck {
     public Carta removerCarta(){
         return cartasDeck.poll();
     }
+    public boolean estaVazio(){
+        return cartasDeck.isEmpty();
+    }
 }

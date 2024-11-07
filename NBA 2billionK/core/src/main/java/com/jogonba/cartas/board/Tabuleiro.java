@@ -1,27 +1,27 @@
 package com.jogonba.cartas.board;
 import com.jogonba.cartas.cards.Carta;
+import com.jogonba.cartas.players.Deck;
 import com.jogonba.cartas.players.Jogador;
 import com.jogonba.cartas.players.Hand;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Tabuleiro {
-    private LinkedList<Carta> slotsJogador1;
-    private LinkedList<Carta> slotsJogador2;
+    private ArrayList<Carta> slotsTabuleiro;
 
     public Tabuleiro() {
-        this.slotsJogador1 = new LinkedList<>();
-        this.slotsJogador2 = new LinkedList<>();
+        this.slotsTabuleiro = new ArrayList<>();
     }
 
     //Métodos relevantes:
-    public void jogarCartaJ1(Hand hand) {
-        Carta cartaRemovida = hand.removerCarta();
-        slotsJogador1.add(cartaRemovida);
+    public void colocarCarta(Carta carta){
+        slotsTabuleiro.add(carta);
     }
 
-    public void jogarCartaJ2(Hand hand) {
-        Carta cartaRemovida = hand.removerCarta();
-        slotsJogador2.add(cartaRemovida);
+    public Carta removerCarta(int posicao) {
+        return slotsTabuleiro.remove(posicao);
     }
 
+    public int verificarPosicao(Carta carta){
+        return slotsTabuleiro.indexOf(carta);
+    }
 }

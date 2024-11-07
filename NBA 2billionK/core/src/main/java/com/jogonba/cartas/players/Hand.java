@@ -1,12 +1,12 @@
 package com.jogonba.cartas.players;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import com.jogonba.cartas.cards.Carta;
 
 public class Hand {
-    private LinkedList<Carta> cartasHand;
+    private ArrayList<Carta> cartasHand;
 
     public Hand(){
-        this.cartasHand = new LinkedList<>();
+        this.cartasHand = new ArrayList<>();
     }
 
     //Métodos relevantes:
@@ -15,8 +15,8 @@ public class Hand {
         cartasHand.add(cartaRemovida);
     }
 
-    public Carta removerCarta(){
-        return cartasHand.poll();
+    public Carta removerCarta(int posicao){
+        return cartasHand.remove(posicao);
     }
 
 
